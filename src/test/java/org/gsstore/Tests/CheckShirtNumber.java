@@ -40,7 +40,8 @@ public class CheckShirtNumber extends IndexPage{
         String csvData = formattedDate + "," + formattedTime + "," + quantity;
 
         // Write data to CSV file in append mode
-        homePage.writeDataToCSV(csvData, "shirt_numbers.csv");
+//        homePage.writeDataToCSV(csvData, "shirt_numbers.csv");
+        homePage.writeDataToCSV(csvData, "C:\\Users\\MehmetOlgun\\AquaProjects\\checkGsShirtSales\\shirt_numbers.csv");
 
         System.out.println("Tarih ve Forma satis adedi : "+csvData);
     }
