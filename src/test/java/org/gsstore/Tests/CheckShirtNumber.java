@@ -5,15 +5,16 @@ import org.junit.Test;
 import org.gsstore.utilities.BrowserUtils;
 import org.gsstore.utilities.Driver;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
-//import java.time.LocalTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class CheckShirtNumber extends IndexPage{
 
     LocalDate today = LocalDate.now();
-//    LocalTime now = LocalTime.now();
+    LocalTime now = LocalTime.now();
 
     @After
     public void tearDown() {
@@ -30,10 +31,13 @@ public class CheckShirtNumber extends IndexPage{
         String quantityString = homePage.counter.getAttribute("data-quantity");
         int quantity = Integer.parseInt(quantityString);
 
-        String formattedDateTime = today.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm"));
+        // Format date to "17.07.2024"
+        String formattedDate = today.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        String formattedTime = now.format(DateTimeFormatter.ofPattern("HH:mm"));
+
 
         // Prepare data for CSV
-        String csvData = formattedDateTime + "," + quantity;
+        String csvData = formattedDate + "," + formattedTime + "," + quantity;
 
         // Write data to CSV file in append mode
 //        homePage.writeDataToCSV(csvData, "shirt_numbers.csv");
