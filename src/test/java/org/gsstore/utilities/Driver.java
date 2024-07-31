@@ -31,10 +31,14 @@ public class Driver {
                 case "chrome":
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--remote-allow-origins=*");
+                    options.setBinary("src/test/resources/tools/chromedriver.exe");
                     driver = new ChromeDriver();
                     break;
                 case "chrome-headless":
-                    driver = new ChromeDriver(new ChromeOptions().addArguments("--headless"));
+                    ChromeOptions chromeHeadlessOptions = new ChromeOptions();
+                    chromeHeadlessOptions.addArguments("--headless", "--remote-allow-origins=*");
+                    chromeHeadlessOptions.setBinary("src/test/resources/tools/chromedriver.exe");
+                    driver = new ChromeDriver(chromeHeadlessOptions);
                     break;
                 case "firefox":
                     driver = new FirefoxDriver();
