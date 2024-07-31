@@ -35,10 +35,7 @@ public class Driver {
                     driver = new ChromeDriver();
                     break;
                 case "chrome-headless":
-                    ChromeOptions chromeHeadlessOptions = new ChromeOptions();
-                    chromeHeadlessOptions.addArguments("--headless", "--remote-allow-origins=*");
-                    chromeHeadlessOptions.setBinary("src/test/resources/tools/chromedriver.exe");
-                    driver = new ChromeDriver(chromeHeadlessOptions);
+                    driver = new ChromeDriver(new ChromeOptions().addArguments("--headless"));
                     break;
                 case "firefox":
                     driver = new FirefoxDriver();
