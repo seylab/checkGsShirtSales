@@ -34,14 +34,14 @@ public class Driver {
                     options.addArguments("--disable-search-engine-choice-screen");
                     options.addArguments("--disable-features=OptimizationGuideModelDownloading,OptimizationHintsFetching,OptimizationTargetPrediction,OptimizationHints");
                     options.setBinary("src/test/resources/tools/chromedriver.exe");
-                    driver = new ChromeDriver();
+                    driver = new ChromeDriver(options);
                     break;
                 case "chrome-headless":
                     ChromeOptions chromeHeadlessOptions = new ChromeOptions();
-                    chromeHeadlessOptions.addArguments("--headless");
+                    chromeHeadlessOptions.addArguments("--headless=new");
                     chromeHeadlessOptions.addArguments("--disable-search-engine-choice-screen");
                     chromeHeadlessOptions.addArguments("--disable-features=OptimizationGuideModelDownloading,OptimizationHintsFetching,OptimizationTargetPrediction,OptimizationHints");
-                    driver = new ChromeDriver(new ChromeOptions().addArguments("--headless"));
+                    driver = new ChromeDriver(chromeHeadlessOptions);
                     break;
                 case "firefox":
                     driver = new FirefoxDriver();
