@@ -33,7 +33,8 @@ public class Driver {
                     options.addArguments("--remote-allow-origins=*");
                     options.addArguments("--disable-search-engine-choice-screen");
                     options.addArguments("--disable-features=OptimizationGuideModelDownloading,OptimizationHintsFetching,OptimizationTargetPrediction,OptimizationHints");
-                    options.setBinary("src/test/resources/tools/chromedriver.exe");
+                    options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+//                    options.setBinary("src/test/resources/tools/chromedriver.exe");
                     driver = new ChromeDriver(options);
                     break;
                 case "chrome-headless":
