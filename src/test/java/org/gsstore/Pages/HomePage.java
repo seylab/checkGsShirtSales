@@ -35,7 +35,7 @@ public class HomePage extends BasePage{
         String sql = "INSERT INTO shirts.shirts (date,time,sales) VALUES (?,?,?)";
         Connection conn = dbConnection(url, user, password);
 
-        try (PreparedStatement statement = conn.prepareStatement(sql);){
+        try (PreparedStatement statement = conn.prepareStatement(sql)){
             statement.setString(1, date);
             statement.setString(2, time);
             statement.setString(3, sales);

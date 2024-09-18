@@ -5,11 +5,7 @@ import org.junit.Test;
 import org.gsstore.utilities.BrowserUtils;
 import org.gsstore.utilities.Driver;
 
-import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -51,7 +47,7 @@ public class CheckShirtNumber extends IndexPage {
     }
 
     @Test
-    public void ShirtNumberAndSaveToDB() throws IOException {
+    public void ShirtNumberAndSaveToDB()  {
         Driver.get().get("https://www.gsstore.org/");
         Driver.get().manage().window().maximize();
 
