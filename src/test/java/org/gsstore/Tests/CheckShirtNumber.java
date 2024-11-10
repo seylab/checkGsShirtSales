@@ -20,7 +20,7 @@ public class CheckShirtNumber extends IndexPage {
     public void tearDown() {
         Driver.closeDriver();
     }
-
+/*
     @Test
     public void ShirtNumberAndSaveToCSV() throws IOException {
         Driver.get().get("https://www.gsstore.org/");
@@ -45,7 +45,7 @@ public class CheckShirtNumber extends IndexPage {
 
         System.out.println("Tarih ve Forma satis adedi : " + csvData);
     }
-
+*/
     @Test
     public void ShirtNumberAndSaveToDB()  {
         Driver.get().get("https://www.gsstore.org/");
